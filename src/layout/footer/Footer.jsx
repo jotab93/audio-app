@@ -1,52 +1,46 @@
 import { AppBar, Box, Toolbar } from "@mui/material";
-import styles from "./Footer.css";
+import "./Footer.css";
 import { Link } from "react-router-dom";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import { menuRoutes } from "../../routes/menuRoutes";
 
 const Footer = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar className={styles.footerContainer} position="relative">
-        <Toolbar className={styles.bar}>
+      <AppBar className="footerContainer" position="relative">
+        <Toolbar className="footerContainer.bar">
           <img
             src="https://res.cloudinary.com/dwqrlr45w/image/upload/v1682637939/audiophileEcommerce/shared/desktop/logo_qnvapf.svg"
             alt="title"
-            className={styles.name}
+            className="footerContainer.bar.name"
           />
-          <div className={styles.items}>
-            {menuRoutes.map((item) => {
-              return (
-                <Link
-                  key={item.id}
-                  sx={{ flexGrow: 1 }}
-                  className={styles.item}
-                  to={item.path}
-                >
-                  {item.title}
-                </Link>
-              );
-            })}
-          </div>
         </Toolbar>
         <>
-          <div className={styles.descriptionIcons}>
-            <p className={styles.description}>
+          <div className="footerContainer.descriptionIcons">
+            <p className="footerContainer.description">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio
               nostrum accusamus recusandae atque quis quo enim ipsa aliquam
               dolore. Vel accusamus minus quod aspernatur, eveniet blanditiis
               fuga repudiandae reprehenderit voluptatum.
             </p>
-            <section className={styles.icons}>
-              <Link to="https://www.facebook.com/" className={styles.social}>
+            <section className="footerContainer.icons">
+              <Link
+                to="https://www.facebook.com/"
+                className="footerContainer.social"
+              >
                 <FacebookIcon />
               </Link>
-              <Link to="https://www.twitter.com/" className={styles.social}>
+              <Link
+                to="https://www.twitter.com/"
+                className="footerContainer.social"
+              >
                 <TwitterIcon />
               </Link>
-              <Link to="https://www.instagram.com/" className={styles.social}>
+              <Link
+                to="https://www.instagram.com/"
+                className="footerContainer.social"
+              >
                 <InstagramIcon />
               </Link>
             </section>
