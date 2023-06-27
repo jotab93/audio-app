@@ -12,9 +12,9 @@ export const menuRoutes = [
     Element: HomeContainer,
   },
   {
-    id: "login",
-    path: "/login",
-    Element: LoginContainer,
+    id: "category",
+    path: "/category/:categoryName",
+    Element: CategoryContainer,
   },
   {
     id: "checkout",
@@ -22,18 +22,18 @@ export const menuRoutes = [
     Element: CheckoutContainer,
   },
   {
-    id: "register",
-    path: "/register",
-    Element: RegisterContainer,
-  },
-  {
-    id: "category",
-    path: "/category/:categoryName",
-    Element: CategoryContainer,
+    id: "login",
+    path: "/login",
+    Element: LoginContainer,
   },
   {
     id: "productDetail",
     path: "/productDetail/:id",
     Element: ProductDetailContainer,
+  },
+  {
+    id: "register",
+    path: "/register",
+    Element: RegisterContainer,
   },
 ];
