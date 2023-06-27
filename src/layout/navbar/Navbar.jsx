@@ -38,6 +38,8 @@ function Navbar() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutter>
+
+          {/* Este es el menu hamburguesa de la version mobile */}
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -74,11 +76,13 @@ function Navbar() {
               ))}
             </Menu>
           </Box>
+
+          {/* Logo de la pagina */}
           <div>
             <img src="https://res.cloudinary.com/dwqrlr45w/image/upload/v1682637939/audiophileEcommerce/shared/desktop/logo_qnvapf.svg" />
           </div>
           <Typography
-            variant="h5"
+            variant="h3"
             noWrap
             component="a"
             href=""
@@ -86,14 +90,16 @@ function Navbar() {
               mr: 2,
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
             }}
           ></Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+
+          {/* Box de las categorías*/}
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", md: "flex", justifyContent: "center" },
+            }}
+          >
             {categories.map((page) => (
               <Button
                 key={page}
@@ -105,6 +111,7 @@ function Navbar() {
             ))}
           </Box>
 
+          {/* Desplegable que se abre con el menu hamburguesa */}
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>

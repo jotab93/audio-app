@@ -1,11 +1,12 @@
-import { Typography } from "@mui/material";
+import "/Users/administrator/Desktop/REACT/audio-app/src/assets/home/desktop/image-hero.jpg";
 
 const Home = () => {
   return (
     <div>
-      <Typography variant="h3" color="primary">
-        Home
-      </Typography>
+      <img
+        src="/Users/administrator/Desktop/REACT/audio-app/src/assets/home/desktop/image-hero.jpg"
+        alt=""
+      />
     </div>
   );
 };
