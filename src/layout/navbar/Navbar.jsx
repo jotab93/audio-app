@@ -13,7 +13,7 @@ import { AppBar } from "@mui/material";
 import SettingsIcon from "@mui/icons-material/Settings";
 
 const categories = ["HOME", "HEADPHONES", "SPEAKERS", "EARPHONES"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const settings = ["Profile", "Account", "Logout"];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -38,7 +38,6 @@ function Navbar() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutter>
-
           {/* Este es el menu hamburguesa de la version mobile */}
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton

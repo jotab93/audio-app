@@ -1,9 +1,11 @@
 .footerContainer {
-  padding: 3rem 10rem;
+  padding: 2rem 8rem;
   background-color: #141414 !important;
-  /* height: 22.8rem; */
+  height: 15rem;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
+  position: relative
+
 }
 
 .footerContainer .bar {
@@ -55,7 +57,7 @@
 
 .footerContainer .icons {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .footerContainer .icons .social svg {

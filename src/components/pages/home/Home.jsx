@@ -1,12 +1,9 @@
-import "/Users/administrator/Desktop/REACT/audio-app/src/assets/home/desktop/image-hero.jpg";
+import imagenHome from "../../../assets/home/desktop/image-hero.jpg";
 
 const Home = () => {
   return (
     <div>
-      <img
-        src="/Users/administrator/Desktop/REACT/audio-app/src/assets/home/desktop/image-hero.jpg"
-        alt=""
-      />
+      <img src={imagenHome} style={{ maxWidth: "100%", maxHeight: "100%" }} />
     </div>
   );
 };

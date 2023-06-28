@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar className="footerContainer" position="relative">
-        <Toolbar className="footerContainer.bar">
+        <Toolbar className="bar">
           <img
             src="https://res.cloudinary.com/dwqrlr45w/image/upload/v1682637939/audiophileEcommerce/shared/desktop/logo_qnvapf.svg"
             alt="title"
@@ -17,29 +17,26 @@ const Footer = () => {
           />
         </Toolbar>
         <>
-          <div className="footerContainer.descriptionIcons">
-            <p className="footerContainer.description">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio
-              nostrum accusamus recusandae atque quis quo enim ipsa aliquam
-              dolore. Vel accusamus minus quod aspernatur, eveniet blanditiis
-              fuga repudiandae reprehenderit voluptatum.
+          <div className="descriptionIcons">
+            <p className="description">
+              (R) Audiophile all rights reserved.
             </p>
-            <section className="footerContainer.icons">
+            <section className="icons">
               <Link
                 to="https://www.facebook.com/"
-                className="footerContainer.social"
+                className="social"
               >
                 <FacebookIcon />
               </Link>
               <Link
                 to="https://www.twitter.com/"
-                className="footerContainer.social"
+                className="social"
               >
                 <TwitterIcon />
               </Link>
               <Link
                 to="https://www.instagram.com/"
-                className="footerContainer.social"
+                className="social"
               >
                 <InstagramIcon />
               </Link>
