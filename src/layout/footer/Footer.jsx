@@ -19,25 +19,20 @@ const Footer = () => {
         <>
           <div className="descriptionIcons">
             <p className="description">
-              (R) Audiophile all rights reserved.
+              Audiophile is an all in one stop to fulfill your audio needs.
+              We are a small team of music lovers and sound specialists who are
+              devoted to helping you get the most out of personal audio. Come
+              and visit our demo facility - we are open 7 days a week.
             </p>
+
             <section className="icons">
-              <Link
-                to="https://www.facebook.com/"
-                className="social"
-              >
+              <Link to="https://www.facebook.com/" className="social">
                 <FacebookIcon />
               </Link>
-              <Link
-                to="https://www.twitter.com/"
-                className="social"
-              >
+              <Link to="https://www.twitter.com/" className="social">
                 <TwitterIcon />
               </Link>
-              <Link
-                to="https://www.instagram.com/"
-                className="social"
-              >
+              <Link to="https://www.instagram.com/" className="social">
                 <InstagramIcon />
               </Link>
             </section>

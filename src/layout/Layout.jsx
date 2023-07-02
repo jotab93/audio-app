@@ -13,7 +13,7 @@ const Layout = () => {
         <Outlet />
       </div>
 
-      <div style={{ minHeight: "0 0 200px" }}>
+      <div style={{ minHeight: "100px", position: "relative" }}>
         <FooterContainer />
       </div>
     </div>
