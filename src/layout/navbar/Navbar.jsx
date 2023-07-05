@@ -16,12 +16,12 @@ const Navbar = ({ size, navigate, handleOpen, handleClose, open }) => {
       <AppBar
         className={"navBarContainer"}
         sx={{
-          backgroundColor: "primary.main",
+          backgroundColor: "secondary.main",
         }}
         position="static"
       >
         <Toolbar className={"bar"}>
-          {size < 900 ? (
+          {size.width < 900 ? (
             <>
               <DrawerContainer />
               <img

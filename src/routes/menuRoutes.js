@@ -3,7 +3,7 @@ import HomeContainer from "../components/pages/home/HomeContainer";
 import LoginContainer from "../components/login/LoginContainer";
 import ProductDetailContainer from "../components/pages/productDetail/ProductDetailContainer";
 import RegisterContainer from "../components/pages/register/RegisterContainer";
-import ProductsListContainer from "../components/productsList/ProductsListContainer";
+import ProductsListContainer from "../components/pages/productsList/ProductsListContainer";
 
 export const menuRoutes = [
   {
@@ -27,7 +27,7 @@ export const menuRoutes = [
     Element: LoginContainer,
   },
   {
-    id: "productDetail",
+    id: "detail",
     path: "/productDetail/:id",
     Element: ProductDetailContainer,
   },

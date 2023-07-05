@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import ProductsList from "./ProductsList";
-import axios from "axios";
 import { useParams } from "react-router-dom";
+import { getAllProducts } from "../../../services/productServices";
 
 const ProductsListContainer = () => {
   const [products, setProducts] = useState([]);
@@ -10,9 +10,8 @@ const ProductsListContainer = () => {
 
   useEffect(() => {
     const getData = async () => {
-      let data = axios.get("http://localhost:5000/products");
-      let res = await data;
-      let productsByCategory = res.data.filter(
+      const data = await getAllProducts();
+      let productsByCategory = data.filter(
         (prod) => prod.category === categoryName
       );
       setProducts(productsByCategory);
@@ -20,7 +19,7 @@ const ProductsListContainer = () => {
     getData();
   }, [categoryName]);
 
-  return <ProductsList products={products} />;
+  return <ProductsList products={products} categoryName={categoryName} />;
 };
 
 export default ProductsListContainer;

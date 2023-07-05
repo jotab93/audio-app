@@ -2,7 +2,7 @@ import { Box, Modal, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import { BotonNaranja } from "../../custom/customComponents";
 
-let stilosModal = {
+let estilosModal = {
   position: "absolute",
   top: "35%",
   right: "0%",
@@ -24,7 +24,7 @@ const CustomModal = ({ open, handleClose }) => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={stilosModal}>
+        <Box sx={estilosModal}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
             Text in a modal
           </Typography>

@@ -4,8 +4,7 @@
   height: 15rem;
   justify-content: center;
   gap: 1rem;
-  position: relative
-
+  position: relative;
 }
 
 .footerContainer .bar {
@@ -97,6 +96,7 @@
 @media (max-width: 600px) {
   .footerContainer {
     padding: 3.7rem 1.5rem;
+    min-height: 300px;
   }
   .footerContainer .bar {
     align-items: center !important;

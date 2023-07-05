@@ -1,19 +1,21 @@
-import imagenHome from "../../../assets/home/desktop/image-hero.jpg";
+import { Box } from "@mui/material";
+import CardContainer from "../../common/card/CardContainer";
+// Otros imports necesarios
 
 const Home = () => {
   return (
-    <div>
-      <img
-        src={imagenHome}
-        style={{
-          maxWidth: "50%",
-          maxHeight: "100%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      />
-    </div>
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "50vh",
+      }}
+    >
+      Home
+      <CardContainer />
+    </Box>
   );
 };
+
 export default Home;

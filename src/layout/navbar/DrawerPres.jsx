@@ -26,7 +26,7 @@ const DrawerPres = ({ state, toggleDrawer }) => {
         {menu.map((text) => (
           <ListItem key={text.id} disablePadding>
             <Link to={text.path} className={styles.itemLink}>
-              <ListItemText primary={text.title} key={text.id} />
+              <ListItemText primary={text.title.toUpperCase()} key={text.id} />
             </Link>
           </ListItem>
         ))}
@@ -35,23 +35,23 @@ const DrawerPres = ({ state, toggleDrawer }) => {
       <Box className={styles.linksBox}>
         <Link
           to="/register"
+          className={styles.itemLink}
           style={{
-            color: "#d87d4a",
             textDecoration: "none",
             margin: "1rem 2rem 0",
           }}
         >
-          Signin
+          CREATE ACCOUNT
         </Link>
         <Link
           to="/login"
+          className={styles.itemLink}
           style={{
-            color: "#d87d4a",
             textDecoration: "none",
             margin: "1rem 2rem 0",
           }}
         >
-          Login
+          LOGIN
         </Link>
       </Box>
     </Box>
@@ -68,7 +68,7 @@ const DrawerPres = ({ state, toggleDrawer }) => {
             open={state[anchor]}
             onClose={toggleDrawer(anchor, false)}
             onOpen={toggleDrawer(anchor, true)}
-            className={styles.menuItems}
+            className={"menuItems"}
           >
             {list(anchor)}
           </SwipeableDrawer>
