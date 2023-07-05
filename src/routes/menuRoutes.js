@@ -1,9 +1,9 @@
-import CategoryContainer from "../components/pages/category/CategoryContainer";
 import CheckoutContainer from "../components/pages/checkout/CheckoutContainer";
 import HomeContainer from "../components/pages/home/HomeContainer";
-import LoginContainer from "../components/pages/login/LoginContainer";
+import LoginContainer from "../components/login/LoginContainer";
 import ProductDetailContainer from "../components/pages/productDetail/ProductDetailContainer";
 import RegisterContainer from "../components/pages/register/RegisterContainer";
+import ProductsListContainer from "../components/pages/productsList/ProductsListContainer";
 
 export const menuRoutes = [
   {
@@ -12,9 +12,9 @@ export const menuRoutes = [
     Element: HomeContainer,
   },
   {
-    id: "category",
+    id: "products",
     path: "/category/:categoryName",
-    Element: CategoryContainer,
+    Element: ProductsListContainer,
   },
   {
     id: "checkout",
@@ -27,7 +27,7 @@ export const menuRoutes = [
     Element: LoginContainer,
   },
   {
-    id: "productDetail",
+    id: "detail",
     path: "/productDetail/:id",
     Element: ProductDetailContainer,
   },

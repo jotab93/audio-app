@@ -1,38 +1,95 @@
-import { AppBar, Box, Toolbar } from "@mui/material";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import "./Navbar.css";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import { menu } from "../../routes/navigation";
+import DrawerContainer from "./DrawerContainer";
+import CustomModalContainer from "../../components/common/customModal/CustomModalContainer";
 
-const Navbar = () => {
+const Navbar = ({ size, navigate, handleOpen, handleClose, open }) => {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" color="primary">
-        <Toolbar>
-          <Box sx={{ display: { xs: "flex", md: "none" } }}>
+      <AppBar
+        className={"navBarContainer"}
+        sx={{
+          backgroundColor: "secondary.main",
+        }}
+        position="static"
+      >
+        <Toolbar className={"bar"}>
+          {size.width < 900 ? (
+            <>
+              <DrawerContainer />
+              <img
+                src="https://res.cloudinary.com/dwqrlr45w/image/upload/v1682637939/audiophileEcommerce/shared/desktop/logo_qnvapf.svg"
+                alt="title"
+                className={"name"}
+                onClick={() => navigate("/")}
+              />
+            </>
+          ) : (
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                gap: "2rem",
+              }}
+            >
+              <IconButton className={"menu"}>
+                <MenuIcon />
+              </IconButton>
+              <img
+                src="https://res.cloudinary.com/dwqrlr45w/image/upload/v1682637939/audiophileEcommerce/shared/desktop/logo_qnvapf.svg"
+                alt="title"
+                className={"name"}
+                onClick={() => navigate("/")}
+              />
+            </Box>
+          )}
+
+          <Box className={"items"}>
+            {menu.map((item) => {
+              return (
+                <Link
+                  key={item.id}
+                  sx={{ flexGrow: 1 }}
+                  className={"item"}
+                  to={item.path}
+                >
+                  {item.title}
+                </Link>
+              );
+            })}
+          </Box>
+          <Box className={"usersContainer"}>
+            <Box className={"loginBox"}>
+              <Link to="/register" className={"linkSign"}>
+                {" "}
+                Register{" "}
+              </Link>
+              <hr />
+              <Link to="/login" className={"linkSign"}>
+                Log In
+              </Link>
+            </Box>
             <IconButton
+              className={"cartIcon"}
               size="large"
               edge="start"
               color="inherit"
               aria-label="menu"
-              sx={{ mr: 2 }}
+              sx={{ padding: "0" }}
+              onClick={handleOpen}
             >
-              <MenuIcon />
+              <ShoppingCartOutlinedIcon sx={{ fontSize: "1.5rem" }} />
             </IconButton>
-            <img src="https://res.cloudinary.com/dwqrlr45w/image/upload/v1682637939/audiophileEcommerce/shared/desktop/logo_qnvapf.svg" />
-            <ShoppingCartOutlinedIcon />
-          </Box>
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <img src="https://res.cloudinary.com/dwqrlr45w/image/upload/v1682637939/audiophileEcommerce/shared/desktop/logo_qnvapf.svg" />
-            <div>
-              <Link>HOME</Link>
-              <Link>HEADPHONES</Link>
-              <Link>SPEAKERS</Link>
-              <Link>EARPHONES</Link>
-            </div>
-            <Link>
-              <ShoppingCartOutlinedIcon />
-            </Link>
+            {/* ACA EL MODAL  */}
+            <CustomModalContainer open={open} handleClose={handleClose} />
           </Box>
         </Toolbar>
       </AppBar>
