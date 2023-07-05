@@ -4,16 +4,15 @@ import NavbarContainer from "./navbar/NavbarContainer";
 
 const Layout = () => {
   return (
-    <div>
-      <div style={{ height: "70px" }}>
+    <div style={{ minHeight: "100vh" }}>
+      <div>
         <NavbarContainer />
       </div>
-
-      <div style={{ minHeight: "calc(100vh - 260px)" }}>
+      <div style={{ minHeight: "calc(100vh - 270px)" }}>
         <Outlet />
       </div>
 
-      <div style={{ height: "200px" }}>
+      <div style={{ minHeight: "100px", position: "relative" }}>
         <FooterContainer />
       </div>
     </div>
