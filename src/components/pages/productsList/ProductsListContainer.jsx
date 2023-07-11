@@ -6,7 +6,6 @@ import { getAllProducts } from "../../../services/productServices";
 const ProductsListContainer = () => {
   const [products, setProducts] = useState([]);
   const { categoryName } = useParams();
-  console.log(products);
 
   useEffect(() => {
     const getData = async () => {

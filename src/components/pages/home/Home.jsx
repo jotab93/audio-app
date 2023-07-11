@@ -33,20 +33,6 @@ const Home = (product) => {
           >
             Please come back later
           </h3>
-          <div key={product.id}>
-            <h1>{product.name}</h1>
-            <Link to={`/productDetail/4 `}>
-              <Button
-                sx={{
-                  width: "160px",
-                  padding: "10px",
-                }}
-                variant="contained"
-              >
-                SEE PRODUCT
-              </Button>
-            </Link>
-          </div>
         </div>
       </Box>
     </div>

@@ -1,6 +1,8 @@
-import { Box, Modal, Typography } from "@mui/material";
+import { Box, Button, IconButton, Modal } from "@mui/material";
 import { Link } from "react-router-dom";
 import { BotonNaranja } from "../../custom/customComponents";
+import DeleteIcon from "@mui/icons-material/Delete";
+import { clearCart, removeById } from "../../../store/cartSlice";
 
 let estilosModal = {
   position: "absolute",
@@ -15,7 +17,7 @@ let estilosModal = {
   minHeight: "400px",
 };
 
-const CustomModal = ({ open, handleClose }) => {
+const CustomModal = ({ open, handleClose, cart, dispatch, total }) => {
   return (
     <div>
       <Modal
@@ -25,14 +27,28 @@ const CustomModal = ({ open, handleClose }) => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={estilosModal}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
-          </Typography>
+          <Button onClick={() => dispatch(clearCart())}>Remove all</Button>
+          {cart.map((prod) => (
+            <div key={prod.id} style={{ border: "2px solid black" }}>
+              <IconButton onClick={() => dispatch(removeById(prod.id))}>
+                <DeleteIcon />
+              </IconButton>
+              <div>
+                {/* <img src={prod.image} alt="" /> */}
+                <h4>{prod.name}</h4>
+                <h6>{prod.price}</h6>
+              </div>
+            </div>
+          ))}
           <Link to="/checkout">
             <BotonNaranja onClick={handleClose} variant="contained">
               CHECKOUT
             </BotonNaranja>
           </Link>
+          <Box>
+            <h5>Total: </h5>
+            <h6>{total}</h6>
+          </Box>
         </Box>
       </Modal>
     </div>
